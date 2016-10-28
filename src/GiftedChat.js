@@ -66,6 +66,7 @@ class GiftedChat extends React.Component {
     this.getLocale = this.getLocale.bind(this);
 
     this.invertibleScrollViewProps = {
+      contentContainerStyle: props.scrollViewStyle,
       inverted: true,
       keyboardShouldPersistTaps: true,
       onTouchStart: this.onTouchStart,
@@ -500,6 +501,7 @@ GiftedChat.defaultProps = {
 };
 
 GiftedChat.propTypes = {
+  scrollViewStyle: View.propTypes.style,
   messages: React.PropTypes.array,
   onSend: React.PropTypes.func,
   loadEarlier: React.PropTypes.bool,
