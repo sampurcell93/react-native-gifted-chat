@@ -83,11 +83,11 @@ const styles = {
     container: {
     },
     text: {
-      color: 'black',
+      color: '#484848',
       ...textStyle,
     },
     link: {
-      color: 'black',
+      color: '#484848',
       textDecorationLine: 'underline',
     },
   }),
