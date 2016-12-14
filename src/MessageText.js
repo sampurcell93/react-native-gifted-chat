@@ -13,7 +13,7 @@ export default class MessageText extends React.Component {
   static propTypes = {
     style: View.propTypes.style,
     hashtagStyle: View.propTypes.style,
-    handleHashtagPress: PropTypes.func.isRequired
+    handleHashtagPress: React.PropTypes.func.isRequired
   };
   constructor(props) {
     super(props);
