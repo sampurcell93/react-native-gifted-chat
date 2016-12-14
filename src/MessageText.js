@@ -11,7 +11,7 @@ import Communications from 'react-native-communications';
 
 export default class MessageText extends React.Component {
   static propTypes = {
-    style: View.propTypes.style
+    style: View.propTypes.style,
     hashtagStyle: View.propTypes.style,
     handleHashtagPress: PropTypes.func.isRequired
   };
