@@ -11,7 +11,9 @@ import Communications from 'react-native-communications';
 
 export default class MessageText extends React.Component {
   static propTypes = {
-    style: View.propTypes
+    style: View.propTypes.style
+    hashtagStyle: View.propTypes.style,
+    handleHashtagPress: PropTypes.func.isRequired
   };
   constructor(props) {
     super(props);
@@ -60,6 +62,7 @@ export default class MessageText extends React.Component {
             {type: 'url', style: StyleSheet.flatten([styles[this.props.position].link, this.props.linkStyle[this.props.position]]), onPress: this.onUrlPress},
             {type: 'phone', style: StyleSheet.flatten([styles[this.props.position].link, this.props.linkStyle[this.props.position]]), onPress: this.onPhonePress},
             {type: 'email', style: StyleSheet.flatten([styles[this.props.position].link, this.props.linkStyle[this.props.position]]), onPress: this.onEmailPress},
+            {pattern: /#(\w+)/,  style: this.props.hashtagStyle, onPress: this.props.handleHashtagPress},
           ]}
         >
           {this.props.currentMessage.text}
