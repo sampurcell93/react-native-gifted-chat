@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import {
   Linking,
@@ -13,7 +15,8 @@ export default class MessageText extends React.Component {
   static propTypes = {
     style: View.propTypes.style,
     hashtagStyle: View.propTypes.style,
-    handleHashtagPress: React.PropTypes.func.isRequired
+    handleHashtagPress: React.PropTypes.func,
+    handleUsernamePress: React.PropTypes.func
   };
   constructor(props) {
     super(props);
@@ -63,6 +66,7 @@ export default class MessageText extends React.Component {
             {type: 'phone', style: StyleSheet.flatten([styles[this.props.position].link, this.props.linkStyle[this.props.position]]), onPress: this.onPhonePress},
             {type: 'email', style: StyleSheet.flatten([styles[this.props.position].link, this.props.linkStyle[this.props.position]]), onPress: this.onEmailPress},
             {pattern: /#(\w+)/,  style: this.props.hashtagStyle, onPress: this.props.handleHashtagPress},
+            {pattern: this.props.getUsernameRegex(),  style: this.props.hashtagStyle, onPress: this.props.handleUsernamePress},
           ]}
         >
           {this.props.currentMessage.text}
